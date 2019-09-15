@@ -1,4 +1,5 @@
 from flask import render_template, request, redirect, url_for,abort
+from forms import RegistrationForm, LoginForm
 from . import main
 from .. import db
 
