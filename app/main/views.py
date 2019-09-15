@@ -5,4 +5,18 @@ from .. import db
 
 @main.route('/')
 def index():
-    return '<h1> Hello World </h1>'
+    return render_template('index.html')
+
+
+@main.route('/register', methods = ['GET','POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Account created for {form.username.data}', 'success')
+        return redirect(url_for('home'))
+    return render_template('register.html', title = Register, form=form)
+
+@main.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', title = Login, form=form)
