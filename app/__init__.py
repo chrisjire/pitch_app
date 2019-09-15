@@ -1,4 +1,3 @@
-
 from flask import Flask
 from config import config_options
 from flask_bootstrap import Bootstrap
@@ -11,7 +10,7 @@ db = SQLAlchemy()
 def create_app(config_state):
     app = Flask(__name__)
     app.config.from_object(config_options[config_state])
-
+    app,config[,SECRET KEY] = '839c77779c2c85a63fec8cf8f9c570d6a1ee0628'
 
     bootstrap.init_app(app)
     db.init_app(app)
