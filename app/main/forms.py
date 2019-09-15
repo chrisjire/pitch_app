@@ -1,17 +1,24 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField, PasswordField, BooleanField
-from wtforms.validators import DataRequired, Length, Email, EqualTo
+from wtforms import StringField,TextAreaField,SubmitField, SelectField, RadioField
+from wtforms.validators import Required
 
+class CommentsForm(FlaskForm):
+    comment = TextAreaField('Comment', validators=[Required()])
+    vote=RadioField('default field arguments', choices=[('1', 'UpVote'), ('1', 'DownVote')])
+    submit = SubmitField('SUBMIT')  
 
-class RegistrationForm(FlaskForm):
-    username = StringField('Username', validators= [DataRequired(), Length(min =  5, max = 15)])
-    email = StringField('Email', validators= [DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired(), Length(min =  5, max = 15)])
-    confirm_password = PasswordField('Confirm Password',validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField('Sign Up')
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Tell us about you.',validators = [Required()])
+    submit = SubmitField('Submit') 
 
-class LoginForm(FlaskForm):
-    email = StringField('Email', validators= [DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired(), Length(min =  5, max = 15)])
-    remember = BooleanField('Remember Me')
-    submit = SubmitField('Log In')
+class PitchForm(FlaskForm):
+    category_id = SelectField('Select Category', choices=[('1', 'Interview'), ('2', 'Pick Up Lines'), ('3', 'Promotion'),('4','Product')])
+    content = TextAreaField('YOUR PITCH')
+    submit = SubmitField('Create Pitch')
+
+class UpvoteForm(FlaskForm):
+    '''
+    Class to create a wtf form for upvoting a pitch
+    '''
+    submit = SubmitField('Upvote')
+    
