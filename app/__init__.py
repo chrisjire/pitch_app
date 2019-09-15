@@ -9,9 +9,10 @@ db = SQLAlchemy()
 
 def create_app(config_state):
     app = Flask(__name__)
-    app.config.from_object(config_options[config_state])
-    app,config[SECRET_KEY] = '839c77779c2c85a63fec8cf8f9c570d6a1ee0628'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://chris:matthewwilliams@localhost/pitch_app'
 
+
+    # Initializing Flask Extensions
     bootstrap.init_app(app)
     db.init_app(app)
 
@@ -23,4 +24,3 @@ def create_app(config_state):
 
     return app
 
-from .main import views
