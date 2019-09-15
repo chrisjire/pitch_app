@@ -38,7 +38,9 @@ def create_app(config_name):
     app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
 
     # configure UploadSet
-    configure_uploads(app,photos)
+    app.config['UPLOADED_CSVFILES_DEST'] = '/var/uploads'
+    csvfiles = UploadSet('csvfiles', ('csv',))
+    configure_uploads(app, (csvfiles,))
 
 
     return app

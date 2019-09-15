@@ -7,8 +7,6 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
         <!-- Bootstrap core CSS -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Main.css -->
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
         <!-- Material Design Bootstrap -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet">
         <!-- JQuery -->
@@ -41,27 +39,11 @@
         {% endblock %}
 
     </head>
-    <main role="main" class="container">
-            <div class="row">
-                <div class="col-md-8">
-                {% block content %}
+    <body>
+        {% block content %}
                 
-                {% endblock %}
-                </div>
-                <div class="col-md-4">
-                <div class="content-section">
-                    <h3>Our Sidebar</h3>
-                    <p class='text-muted'>You can put any information here you'd like.
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-light">Latest Posts</li>
-                        <li class="list-group-item list-group-item-light">Announcements</li>
-                        <li class="list-group-item list-group-item-light">Calendars</li>
-                        <li class="list-group-item list-group-item-light">etc</li>
-                    </ul>
-                    </p>
-                </div>
-                </div>
-            </div>
-            </main>
+        {% endblock %}
+                
+    </body>
             
 </html>

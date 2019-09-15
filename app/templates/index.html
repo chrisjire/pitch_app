@@ -3,45 +3,62 @@
 
 {% block styles%}
 {{ super() }}
-<link href="https://fonts.googleapis.com/css?family=Akronim|Bellefair|Joti+One" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <div class="container" style="background-color:gainsboro; padding:20px; margin-top:0px; padding-top:40px; padding-bottom:400px;">
+    <div class="container_fluid" style="background-color:white; padding:20px; margin-top:0px; padding-top:40px; padding-bottom:400px;">
         <div class="row" style="text-align:center; font-size:30px;">
-            <span style="font-size:40px; font-family: 'Akronim', cursive;">oNe mINute PiTch</span>
+            <span style="font-size:40px; font-family: 'italic', cursive;">Pitch</span>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3"> 
-                    <a href="{{url_for('main.interview')}}" style="font-family: 'Joti One', cursive; font-size:20px;">
-                        <br>
-                        Inteview Pitches
-                    </a>
+        <div class="col-sm-12 col-md-3 col-lg-3"> 
+                <div class="card">
+                        <div class="card-body">
+                
+                            <p class="card-text"><a href="{{url_for('main.interview')}}" style="font-family: 'italic', cursive; font-size:20px; , text-align:center">
+                                    <br>
+                                    Interview Pitches
+                                </a></p>
+                        </div>
+                </div>
                     <br>
-                    <a href="{{url_for('main.pick_up_line')}}" style="font-family: 'Joti One', cursive; font-size:20px;">
-                        <br>
-                        Pick Up Lines
-                    </a>
-                    <br>
+                    <div class="card">
+                            <div class="card-body">
+                    
+                                <p class="card-text">
                     <a href="{{url_for('main.promotion')}}" style="font-family: 'Joti One', cursive; font-size:20px;">
                         <br>
                         Promotion Pitches
-                    </a>
+                    </a></p>
+                </div>
+        </div>
                     <br>
+                    <div class="card">
+                            <div class="card-body">
+                    
+                                <p class="card-text">
                     <a href="{{url_for('main.product')}}" style="font-family: 'Joti One', cursive; font-size:20px;">
                         <br>
                         Product Pitches
-                    </a>
+                    </a></p>
+                </div>
+        </div>
                     <br>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
-            <div class="panel style="style="border: 3px solid #f2f2f2; padding:20px; margin-top:10px;">
+        <div class="col-sm-12 col-md-9 col-lg-9">
+            <div class=" style="style="border: 3px solid #f2f2f2; padding:20px; margin-top:10px;">
                 <p style="font-family: 'Bellefair', serif; font-size:20px;">Write your one minute in any of the categories to the left and let other user vote and comment on it.Please also feel free to comment and vote on pitches posted by other people </p>
                 
                 <div style="text-align:center;">
+                        <div class="card">
+                                <div class="card-body">
+                        
+                                    <p class="card-text">
                     <a href="{{url_for('main.new_pitch')}}">
                         <br>
-                        <span >Add a new Pitch</span>
-                    </a>
+                        <span style="font-size:25px;" >Add a new Pitch</span>
+                    </a></p>
+                </div>
+        </div>
 
                 </div>
             
@@ -59,3 +76,4 @@
 
     </div>
 
+    {% endblock %}
