@@ -6,15 +6,15 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container_fluid" style="background-color:white; padding:20px; margin-top:0px; padding-top:40px; padding-bottom:400px;">
+    <div class="container" style="background-color:white;">
         <div style="text-align:center; font-size:30px;">
-            <span style="font-size:40px; font-family: 'italic', cursive; text-align:center;">Pitch</span>
+            <span style="font-size:100px; font-family: 'Monoton', cursive; text-align:center;">Pitchyf</span>
         </div>
         <div> 
                 <div class="card">
-                        <div class="card-body">
+                        <div class="card-body"  style="text-align: center">
                 
-                            <p class="card-text"><a href="{{url_for('main.interview')}}" style="font-family: 'italic', cursive; font-size:20px; , text-align:center">
+                            <p class="card-text"><a href="{{url_for('main.interview')}}" style="font-family: 'italic', cursive; font-size:20px; text-align:center;">
                                     <br>
                                     Interview Pitches
                                 </a></p>
@@ -22,7 +22,7 @@
                 </div>
                     <br>
                     <div class="card">
-                            <div class="card-body">
+                            <div class="card-body"  style="text-align: center">
                     
                                 <p class="card-text">
                     <a href="{{url_for('main.promotion')}}" style="font-family: 'Joti One', cursive; font-size:20px;">
@@ -33,7 +33,7 @@
         </div>
                     <br>
                     <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" style="text-align: center">
                     
                                 <p class="card-text">
                     <a href="{{url_for('main.product')}}" style="font-family: 'Joti One', cursive; font-size:20px; ">
@@ -46,7 +46,7 @@
         </div>
         <div >
             <div class=" style="style="border: 3px solid #f2f2f2;">
-                <p style="font-family: 'Bellefair', serif; font-size:20px; text-align:center;">Write your on</p>
+                <p style="font-size:20px; text-align:center;"></p>
                 
                 <div style="text-align:center;">
                         <div class="card">
@@ -55,7 +55,7 @@
                                     <p class="card-text">
                     <a href="{{url_for('main.new_pitch')}}">
                         <br>
-                        <button style="font-size:15px;" >Add a new Pitch</span>
+                        <button type="button" class="btn btn-outline-warning waves-effect" style="font-size:25px;" >Add a new Pitch</button>
                     </a></p>
                 </div>
         </div>
@@ -67,10 +67,19 @@
         </div>
     </hr>
         <div class="all-pitches">
-            <span style="color:gainsboro;">All pitches are displayed below</span>
-                <hr> 
-                {{macro.displayPitches(pitches)}}
+
             
+            <!-- Card content -->
+            <div class="card-body">
+            
+                <!-- Title -->
+                <h4 class="card-title" style="font-size:20px; text-align:center;"><a>All pitches are displayed below</a></h4>
+                <!-- Text -->
+                <p class="card-text">{{macro.displayPitches(pitches)}}</p>
+            
+            </div>
+            
+            </div>
 
         </div>
 
