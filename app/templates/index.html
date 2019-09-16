@@ -7,10 +7,10 @@
 
 {% block content %}
     <div class="container_fluid" style="background-color:white; padding:20px; margin-top:0px; padding-top:40px; padding-bottom:400px;">
-        <div class="row" style="text-align:center; font-size:30px;">
-            <span style="font-size:40px; font-family: 'italic', cursive;">Pitch</span>
+        <div style="text-align:center; font-size:30px;">
+            <span style="font-size:40px; font-family: 'italic', cursive; text-align:center;">Pitch</span>
         </div>
-        <div class="col-sm-12 col-md-3 col-lg-3"> 
+        <div> 
                 <div class="card">
                         <div class="card-body">
                 
@@ -36,7 +36,7 @@
                             <div class="card-body">
                     
                                 <p class="card-text">
-                    <a href="{{url_for('main.product')}}" style="font-family: 'Joti One', cursive; font-size:20px;">
+                    <a href="{{url_for('main.product')}}" style="font-family: 'Joti One', cursive; font-size:20px; ">
                         <br>
                         Product Pitches
                     </a></p>
@@ -44,9 +44,9 @@
         </div>
                     <br>
         </div>
-        <div class="col-sm-12 col-md-9 col-lg-9">
-            <div class=" style="style="border: 3px solid #f2f2f2; padding:20px; margin-top:10px;">
-                <p style="font-family: 'Bellefair', serif; font-size:20px;">Write your one minute in any of the categories to the left and let other user vote and comment on it.Please also feel free to comment and vote on pitches posted by other people </p>
+        <div >
+            <div class=" style="style="border: 3px solid #f2f2f2;">
+                <p style="font-family: 'Bellefair', serif; font-size:20px; text-align:center;">Write your on</p>
                 
                 <div style="text-align:center;">
                         <div class="card">
@@ -55,7 +55,7 @@
                                     <p class="card-text">
                     <a href="{{url_for('main.new_pitch')}}">
                         <br>
-                        <span style="font-size:25px;" >Add a new Pitch</span>
+                        <button style="font-size:15px;" >Add a new Pitch</span>
                     </a></p>
                 </div>
         </div>
