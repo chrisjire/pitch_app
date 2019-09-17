@@ -8,20 +8,20 @@
 {% block content %}
     <div class="container" style="background-color:white;">
         <div style="text-align:center; font-size:30px;">
-            <span style="font-size:100px; font-family: 'Monoton', cursive; text-align:center;">Pitchyf</span>
+            <span  style="font-size:100px; font-family: 'Monoton', cursive; text-align:center;" class="text-warning">Pitchyf</span>
         </div>
         <div> 
-                <div class="card">
-                        <div class="card-body"  style="text-align: center">
+                <div class="card border border-warning"">
+                        <div class="card-body"  style="text-align: center; ">
                 
-                            <p class="card-text"><a href="{{url_for('main.interview')}}" style="font-family: 'italic', cursive; font-size:20px; text-align:center;">
+                            <p><a href="{{url_for('main.interview')}}" style="font-family: 'italic', cursive; font-size:20px; text-align:center;">
                                     <br>
                                     Interview Pitches
                                 </a></p>
                         </div>
                 </div>
                     <br>
-                    <div class="card">
+                    <div class="card border border-warning"">
                             <div class="card-body"  style="text-align: center">
                     
                                 <p class="card-text">
@@ -32,7 +32,7 @@
                 </div>
         </div>
                     <br>
-                    <div class="card">
+                    <div class="card border border-warning"">
                             <div class="card-body" style="text-align: center">
                     
                                 <p class="card-text">
@@ -45,37 +45,20 @@
                     <br>
         </div>
         <div >
-            <div class=" style="style="border: 3px solid #f2f2f2;">
-                <p style="font-size:20px; text-align:center;"></p>
-                
-                <div style="text-align:center;">
-                        <div class="card">
-                                <div class="card-body">
-                        
-                                    <p class="card-text">
-                    <a href="{{url_for('main.new_pitch')}}">
-                        <br>
-                        <button type="button" class="btn btn-outline-warning waves-effect" style="font-size:25px;" >Add a new Pitch</button>
-                    </a></p>
-                </div>
-        </div>
-
-                </div>
             
-            </div>
             
         </div>
     </hr>
-        <div class="all-pitches">
+        <div class="all-pitches border border-warning">
 
             
             <!-- Card content -->
             <div class="card-body">
             
                 <!-- Title -->
-                <h4 class="card-title" style="font-size:20px; text-align:center;"><a>All pitches are displayed below</a></h4>
+                <h4 class="card-title" style="font-size:50px; text-align:center;"><a>Pitches are displayed below</a></h4>
                 <!-- Text -->
-                <p class="card-text">{{macro.displayPitches(pitches)}}</p>
+                <p class="card-text border border-warning">{{macro.displayPitches(pitches)}}</p>
             
             </div>
             

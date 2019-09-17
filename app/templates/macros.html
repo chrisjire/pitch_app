@@ -1,15 +1,29 @@
 {% macro displayPitches(pitches_list) %}
 
     {% for pitch in pitches_list %}
-        <div class="panel style="style="box-shadow: 5px 5px 5px 5px #f2f2f2; padding:10px; text-align:center;">
-            <p>{{pitch.pitch}}</p>
+    <div class="container border border-warning">
+        <div class="card-body align-self-center mx-auto text-center" style="background-color: white; ">
+            <p class="card-text justify-content-center" >{{pitch.pitch}}</p>
+            <hr>
             <br>
-          <a 
-          <button type="button" class="btn btn-outline-warning waves-effect"  href="{{url_for('main.new_comment',id=pitch.id)}}">Add a Comment</a></button>
-          <a
-          <button type="button" class="btn btn-outline-warning waves-effect" style="color: black" href="{{url_for('main.view_comments',id=pitch.id)}}">View Comments</a></button>&nbsp;&nbsp;|
-          <a
-          <button type="button" class="btn btn-outline-warning waves-effect" style="color: black" href="{{url_for('main.new_comment',id=pitch.id)}}">Vote</a></button>
+          <p>
+            <a href="{{url_for('main.new_comment',id=pitch.id)}}">
+              <button type="button" class="btn btn-outline-warning waves-effect">Add a Comment</button>
+            </a>
+          </p>
+
+          <p>
+            <a href="{{url_for('main.view_comments',id=pitch.id)}}">
+              <button type="button" class="btn btn-outline-warning waves-effect">View Comments</button>
+            </a>
+          </p>
+
+          <p>
+            <a href="{{url_for('main.new_comment',id=pitch.id)}}">
+              <button type="button" class="btn btn-outline-warning waves-effect">Vote</button>
+            </a>
+          </p>
+        </div>
       </div> 
     {% endfor %}
 
@@ -18,7 +32,7 @@
 <!-- Displaying comments macro -->
 {% macro displayComments(list_of_comments) %}
 {% for comment in list_of_comments  %}
-<div class="row">
+<div class="row border border-warning">
     
           <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4">
             <h4>Author</h4>
@@ -35,11 +49,25 @@
 {% macro displayPitchesInCategories(pitches,id)%}
   {% for pitch in pitches %}
     {% if pitch.category_id==id%}
-        <div class="panel style="style="box-shadow: 5px 5px 5px 5px #f2f2f2; padding:10px;">
+        <div class="panel align-self-center mx-auto text-center border border-warning"style="box-shadow: 5px 5px 5px 5px #f2f2f2; padding:10px; border-style: solid;">
             <p>{{pitch.pitch}}</p>
-            <button type="button" class="btn btn-outline-warning waves-effect" href="{{url_for('main.new_comment',id=pitch.id)}}">Add a Comment</button>&nbsp;&nbsp;|
-            <button type="button" class="btn btn-outline-warning waves-effect" href="{{url_for('main.view_comments',id=pitch.id)}}">View Comments</button>&nbsp;&nbsp;|
-            <button type="button" class="btn btn-outline-warning waves-effect" href="{{url_for('main.new_comment',id=pitch.id)}}">Vote</button>
+            <p>
+              <a href="{{url_for('main.new_comment',id=pitch.id)}}">
+                <button type="button" class="btn btn-outline-warning waves-effect">Add a Comment</button>
+              </a>
+            </p>
+  
+            <p>
+              <a href="{{url_for('main.view_comments',id=pitch.id)}}">
+                <button type="button" class="btn btn-outline-warning waves-effect">View Comments</button>
+              </a>
+            </p>
+  
+            <p>
+              <a href="{{url_for('main.new_comment',id=pitch.id)}}">
+                <button type="button" class="btn btn-outline-warning waves-effect">Vote</button>
+              </a>
+            </p>
         </div>
     {% endif%}
   {% endfor %}
