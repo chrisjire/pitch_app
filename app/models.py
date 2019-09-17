@@ -64,7 +64,6 @@ class Pitch(db.Model):
         '''
         db.session.add(self)
         db.session.commit()
-    
     @classmethod
     def get_all_pitches(cls):
         '''
