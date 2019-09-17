@@ -2,7 +2,7 @@ import os
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://chris:matthewwilliams@localhost:5432/pitchdb'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://chris:matthewwilliams@localhost5432/pitchdb'
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587 
@@ -11,11 +11,11 @@ class Config:
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://chris:matthewwilliams@localhost:5432/pitchdb'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://chris:matthewwilliams@localhost5432/pitchdb'
 
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://chris:matthewwilliams@localhost:5432/pitchdb'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://chris:matthewwilliams@localhost5432/pitchdb'
     DEBUG = True
 
 
