@@ -1,28 +1,23 @@
-<div class="navbar navbar-inverse young-passion-gradient text-warning" role="navigation" style="background-color: white; border:white;">
+<div class="navbar navbar-expand-lg navbar-light bg-dark" role="navigation" style="color: white;">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button  class="navbar-toggle navbar-brand btn-lg btn-white" data-toggle="collapse" data-target=".navbar-collapse"><i class="fas fa-bars"></i>
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/" style="color:black; font-weight:bolder;"> <a href="/" class="btn btn-lg">
+                
+                <a class="navbar-brand nav-link btn btn-outline-white " href="/" style="color:white; font-weight:bolder; ">
                     <span class="glyphicon glyphicon-home"></span> Home
-                </a></a>
+                </a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
+            <div>
+                <ul class="nav navbar-nav navbar-right mr-auto">
                     {% if current_user.is_authenticated %}
-                    <li><a href="{{url_for('main.profile',uname=current_user.username)}}" style="color:black; font-weight:bolder;">Profile</a></li>
-                    <li><a href="{{url_for('main.profile',uname=current_user.username)}}" style="color:black; font-weight:bolder;">{{current_user.username}}</a></li>
-                    <li><a href="{{url_for('auth.logout')}}" style="color:black; font-weight:bolder;">Sign out</a></li>
+                    <li><a class="navbar-brand nav-link btn btn-outline-white" href="{{url_for('main.profile',uname=current_user.username)}}" style="color:white; font-weight:bolder;margin-left: 1250px ">Profile</a></li>
+                    <li><a class="navbar-brand nav-link btn btn-outline-white" href="{{url_for('main.profile',uname=current_user.username)}}" style="color:white; font-weight:bolder; margin-left: 30px">{{current_user.username}}</a></li>
+                    <li><a class="navbar-brand nav-link btn btn-outline-white" href="{{url_for('auth.logout')}}" style="color:white; font-weight:bolder; margin-left: 30px">Sign out</a></li>
                     {% else %}
-                    <li><a href="{{url_for('auth.login')}}" style="color:black; font-weight:bolder;">Log in</a></li>
-                    <li><a href="{{url_for('auth.register')}}" style="color:black; font-weight:bolder;">Sign Up</a></li>
+                    <li><a class="navbar-brand nav-link btn btn-outline-white" href="{{url_for('auth.login')}}" style="color:white; font-weight:bolder;">Log in</a></li>
+                    <li><a class="navbar-brand nav-link btn btn-outline-white" href="{{url_for('auth.register')}}" style="color:white; font-weight:bolder;">Sign Up</a></li>
                     {%endif%}
                 </ul>
             </div>
-    
+            
         </div>
     </div>

@@ -7,12 +7,12 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container" style="background-color: white;">
         <a href="{{url_for('main.index')}}">
             <button type="button" class="btn btn-primary btn-sm">
                     <span class="glyphicon glyphicon-chevron-left" ></span> Back
                 </button>
-                <h3 style="color:blue;">Comments:</h3>
+                <h3 style="color:black;">Comments:</h3>
         </a>
         
         <h6> &nbsp; &nbsp; <span style="font-weight:bolder">Found :</span>  &nbsp; <span style="font-family:Bellefair; font-size:18px;">{{ comments | count }} Comments</span></h6>
@@ -20,7 +20,7 @@
         {% for item in comments %}
             <div class="panel">
                 <p style="font-family:Bellefair; font-size:20px; padding:10px; text-align:center;">{{item.comment}}</p>  
-                <h5>&nbsp;&nbsp;Comment by: &nbsp;<span style="color:blue;font-family:Bellefair; font-size:20px;">{{item.username}}</span></h5>
+                <h5>&nbsp;&nbsp;Comment by: &nbsp;<span style="color:black;font-family:Bellefair; font-size:20px;">{{item.username}}</span></h5>
             </div>
             {%endfor%}
 

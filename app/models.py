@@ -14,6 +14,8 @@ class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255),index = True) 
+    firstname = db.Column(db.String(255))
+    lastname = db.Column(db.String(255))
     email = db.Column(db.String(255),unique = True,index = True)
     role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
     bio = db.Column(db.String(255))
@@ -54,6 +56,7 @@ class Pitch(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     pitch = db.Column(db.String)
     category_id = db.Column(db.Integer)
+    username =  db.Column(db.String)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     comments = db.relationship('Comment',backref = 'pitch',lazy="dynamic")
         

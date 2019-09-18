@@ -4,18 +4,22 @@
 
 {% block content %}
 
-    <div class="container">
-        <h3>Promotion Pitches</h3>
-        <a href="{{url_for('main.new_pitch')}}">
-            <br>
-            Add a new Pitch
-        </a>
+<div class="jumbotron">
+        <div class="card">
+            <div class="card-body" style="text-align: center">
+                <h3 class="card-title" style="text-align: center">Product Pitches</h3>
+                <a href="{{url_for('main.new_pitch')}}">
+                    <br>
+                    Add a new Pitch
+                </a>
 
-        <hr>
+                <hr>
         
             {{macro.displayPitchesInCategories(pitches,3)}}
         <hr>
-    
+    </div>
+</div> 
+
     </div>
 
 {% endblock %}

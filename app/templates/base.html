@@ -18,6 +18,7 @@
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/js/mdb.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
 
         {% if title %}
         <title> {{ title }}</title>
@@ -37,12 +38,14 @@
         {% block navbar %}
         {% include 'navbar.html' %}
         {% endblock %}
+
+        
         
 
 
 
     </head>
-    <body >
+    <body class="container-fluid" style="background-image: url('https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80'); background-repeat: no-repeat; background-size: cover; background-position: center center;" >
             
         {% block content %}
                 

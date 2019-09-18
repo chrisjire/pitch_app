@@ -2,19 +2,21 @@
 {% import 'macros.html' as macro%}
 
 {% block content %}
-
-    <div class="container">
-        <h3>Interview Pitches</h3>
-        <a href="{{url_for('main.new_pitch')}}">
-            <br>
-            Add a new Pitch
-        </a>
-
-        <hr>
-        
-            {{macro.displayPitchesInCategories(pitches,1)}}
-        <hr>
     
+    <div class="card">
+        <div class="card-body" style="text-align: center">
+            <h3 class="card-title" >Interview Pitches</h3>
+            <a class="" href="{{url_for('main.new_pitch')}}">
+                <br>
+                Add a new Pitch
+            </a>
+
+            <hr>
+            
+                {{macro.displayPitchesInCategories(pitches,1)}}
+            <hr>
+        </div>
     </div>
+
 
 {% endblock %}
